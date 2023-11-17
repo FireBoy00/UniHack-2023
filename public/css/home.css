@@ -1,0 +1,196 @@
+/* options menu */ 
+*{
+    font-family: "Poppins", sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+
+}
+
+.options{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 13.8%;
+    height: 100vh;
+    padding-top: 35px;
+    padding-left: 20px;
+    background-color: black;
+    border-right: 1px solid #666;
+}
+
+.options-up{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 90%;
+}
+
+.options-down{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 10%;
+}
+
+.options-up div, .options-down div{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-blend-mode: darken;
+    margin: 10px 0 10px 5px;
+    width: 80%;
+    height: 30px;
+    color: white;
+
+    background-color: rgb(184, 184, 184);
+}
+
+.options-up div, .options-down div *{
+    padding: 10px 5px;
+}
+
+.options-up span, .options-down span{
+    font-size: 0.8em;
+}
+
+#fletter{
+    background-color: purple ;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    border-radius: 14px;
+    margin: 0 5px 0 0;
+    width: 15px;
+    height: 15px;
+    color: white;
+    margin: 0 10px;
+}
+
+#fletter span{
+    font-size: 13px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.options-up .logo{
+    margin-bottom: 40px;
+}
+
+/* content */
+
+.content{
+    width: 86.2vw;
+    height: 100vh;
+    
+    background-color: black;
+    display: flex;
+    flex-flow: column;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.content .welcome-notify{
+    width: 96%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.content .welcome span{
+    font-size: 18px;
+}
+
+.content #welcome{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.content .welcome-notify ion-icon{
+    width: 15px;
+    color: white;
+}
+
+.content .ev-selection{
+    width: 96%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content #discover, .content #pop-text{
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.content .ev-selection .events{
+    width: 32%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    margin: 0 10px;
+    color: white;
+    border-radius: 50px;
+    background-color: #61adfb;
+}
+
+.content #ev-rec{
+    margin-left: 0px;
+}
+
+.content .ev-selection .events .title{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.content .ev-selection .events .cont{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.content .popular-creators{
+    width: 96%;
+    height: 30vh;
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+    justify-content: start;
+    margin-top: 80px;
+    color: white;
+}
+
+.your-creator{
+    width: auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.your-creator .photo{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.your-creator .info{
+    width: auto;
+    height: 40px;
+    display: flex;
+    flex-flow: column;
+}

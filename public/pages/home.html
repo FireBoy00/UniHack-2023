@@ -4,8 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    
+    <div class="options">
+        <div class="options-up">
+            <div class="logo"> 
+                <img src="" alt="">
+                <span>NAME APP</span>
+            </div>
+            <div class="account">
+                <div id="fletter">
+                    <span>B</span>
+                </div>
+                <span>NUME CONT</span>
+            </div>
+            <div class="my-events">
+                <img>
+                <span>MY EVENTS</span>
+            </div>
+            <div class="events">
+                <img>
+                <span>EVENTS</span>
+            </div>
+        </div>
+        <div class="options-down">
+            <div class="log-out">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <span>LOG OUT</span>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="welcome-notify">
+            <span id="welcome">Welcome to APP, NAME!</span>
+            <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
+        </div>
+        <span id="discover">Discover and Book Events</span>
+        <div class="ev-selection">
+            <div class="events" id="ev-rec">
+                <span class="title">Enjoy</span>
+                <span class="cont">Recommended for you</span>
+            </div>
+            <div class="events" id="ev-fav-creators"><span class="title">Exciting</span>
+                <span class="cont">From your favourites</span>
+            </div>
+            <div class="events" id="ev-year"><span class="title">Waiting for you</span>
+                <span class="cont">Upcoming Events</span>
+            </div>
+        </div>
+        <div class="popular-creators">
+            <span id="pop-text">Your Favorite Creators</span>
+            <div class="your-creator">
+                <div class="photo">
+                    <img src="" alt="">
+                </div>
+                <div class="info">
+                    <div class="name">
+                        <span id="name">NUME</span>
+                    </div>
+                    <div class="origin-country">
+                        <span>TARA DE ORIGINE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
+<template id="popular-creater-temp">
+    <div class="photo">
+        <img src="" alt="">
+    </div>
+    <div class="info">
+        <div class="name">
+            <span id="name">NUME</span>
+        </div>
+        <div class="origin-country">
+            <span>TARA DE ORIGINE</span>
+            <img src="" alt="" id="country-creator">
+        </div>
+    </div>
+</template>
