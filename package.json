@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "electron": "^27.1.0",
+    "electron-reloader": "^1.2.3"
+  }
+}
