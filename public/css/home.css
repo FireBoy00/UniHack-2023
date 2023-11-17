@@ -1,121 +1,196 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+/* options menu */ 
+*{
+    font-family: "Poppins", sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
+.options{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 13.8%;
+    height: 100vh;
+    padding-top: 35px;
+    padding-left: 20px;
+    background-color: black;
+    border-right: 1px solid #666;
 }
 
-button:hover {
-  opacity: 0.8;
+.options-up{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 90%;
 }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+.options-down{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 10%;
 }
 
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
+.options-up div, .options-down div{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-blend-mode: darken;
+    margin: 10px 0 10px 5px;
+    width: 80%;
+    height: 30px;
+    color: white;
+
+    background-color: rgb(184, 184, 184);
 }
 
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
+.options-up div, .options-down div *{
+    padding: 10px 5px;
 }
 
-.container {
-  padding: 16px;
+.options-up span, .options-down span{
+    font-size: 0.8em;
 }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
+#fletter{
+    background-color: purple ;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    border-radius: 14px;
+    margin: 0 5px 0 0;
+    width: 15px;
+    height: 15px;
+    color: white;
+    margin: 0 10px;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
+#fletter span{
+    font-size: 13px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-  height: 40%;
+.options-up .logo{
+    margin-bottom: 40px;
 }
 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
+/* content */
+
+.content{
+    width: 86.2vw;
+    height: 100vh;
+    
+    background-color: black;
+    display: flex;
+    flex-flow: column;
+    padding-top: 30px;
+    padding-left: 20px;
 }
 
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
+.content .welcome-notify{
+    width: 96%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
 }
 
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+.content .welcome span{
+    font-size: 18px;
 }
 
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+.content #welcome{
+    font-size: 18px;
+    font-weight: 600;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
+.content .welcome-notify ion-icon{
+    width: 15px;
+    color: white;
+}
+
+.content .ev-selection{
+    width: 96%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content #discover, .content #pop-text{
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.content .ev-selection .events{
+    width: 32%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    margin: 0 10px;
+    color: white;
+    border-radius: 50px;
+    background-color: #61adfb;
+}
+
+.content #ev-rec{
+    margin-left: 0px;
+}
+
+.content .ev-selection .events .title{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.content .ev-selection .events .cont{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.content .popular-creators{
+    width: 96%;
+    height: 30vh;
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+    justify-content: start;
+    margin-top: 80px;
+    color: white;
+}
+
+.your-creator{
+    width: auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.your-creator .photo{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.your-creator .info{
+    width: auto;
+    height: 40px;
+    display: flex;
+    flex-flow: column;
 }
