@@ -7,36 +7,10 @@
     <link rel="stylesheet" href="../css/home.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script defer src="../js/home.js"></script>
+    
 </head>
 <body>
-    <div class="options">
-        <div class="options-up">
-            <div class="logo"> 
-                <img src="" alt="">
-                <span>NAME APP</span>
-            </div>
-            <div class="account">
-                <div id="fletter">
-                    <span>B</span>
-                </div>
-                <span>NUME CONT</span>
-            </div>
-            <div class="my-events">
-                <img>
-                <span>MY EVENTS</span>
-            </div>
-            <div class="events">
-                <img>
-                <span>EVENTS</span>
-            </div>
-        </div>
-        <div class="options-down">
-            <div class="log-out">
-                <ion-icon name="log-out-outline"></ion-icon>
-                <span>LOG OUT</span>
-            </div>
-        </div>
-    </div>
     <div class="content">
         <div class="welcome-notify">
             <span id="welcome">Welcome to APP, NAME!</span>
@@ -58,17 +32,7 @@
         <div class="popular-creators">
             <span id="pop-text">Your Favorite Creators</span>
             <div class="your-creator">
-                <div class="photo">
-                    <img src="" alt="">
-                </div>
-                <div class="info">
-                    <div class="name">
-                        <span id="name">NUME</span>
-                    </div>
-                    <div class="origin-country">
-                        <span>TARA DE ORIGINE</span>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -76,16 +40,19 @@
 </html>
 
 <template id="popular-creater-temp">
-    <div class="photo">
-        <img src="" alt="">
-    </div>
-    <div class="info">
-        <div class="name">
-            <span id="name">NUME</span>
+    <div class="cnt">
+        <div class="photo">
+            <img src="" alt="">
         </div>
-        <div class="origin-country">
-            <span>TARA DE ORIGINE</span>
-            <img src="" alt="" id="country-creator">
+        <div class="rest">
+            <div class="info">
+                <div class="name">
+                    <span id="name">NUME</span>
+                </div>
+                <div class="origin-country">
+                    <span>TARA DE ORIGINE</span>
+                </div>
         </div>
+        <img id="country-photo" src="../resources/logo_simplu.png" alt="">
     </div>
 </template>
