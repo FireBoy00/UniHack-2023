@@ -1,5 +1,7 @@
 /* options menu */ 
-
+*{
+    font-family: "Poppins", sans-serif;
+}
 body{
     margin: 0;
     padding: 0;
@@ -85,7 +87,7 @@ body{
 .content{
     width: 86.2vw;
     height: 100vh;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
     background-color: black;
     display: flex;
     flex-flow: column;
