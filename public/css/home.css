@@ -168,13 +168,26 @@ body{
     color: white;
 }
 
+.your-creator{
+    width: auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
 
+.your-creator .photo{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 10px;
+}
 
-
-
-
-
-
-
-
-
+.your-creator .info{
+    width: auto;
+    height: 40px;
+    display: flex;
+    flex-flow: column;
+}
