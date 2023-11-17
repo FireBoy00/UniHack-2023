@@ -3,40 +3,71 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Responsive Registration Form | CodingLab </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/register.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+    <script defer src="../js/general.js"></script>
+    <script defer src="../js/register.js"></script>
+    <title>UnityConnect - Registration</title>
+  </head>
 <body>
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="#">
+      <form onsubmit="signUp()" action="#">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
             <input type="text" placeholder="Enter your name" required>
+            <i class="validation">
+              <span></span><span></span>
+            </i>
           </div>
           <div class="input-box">
             <span class="details">Username</span>
             <input type="text" placeholder="Enter your username" required>
+            <i class="validation">
+              <span></span><span></span>
+            </i>
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
+            <input type="email" placeholder="Enter your email" required>
+            <i class="validation">
+              <span></span><span></span>
+            </i>
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
+            <input type="tel" placeholder="Enter your number" required>
+            <i class="validation">
+              <span></span><span></span>
+            </i>
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input type="password" placeholder="Enter your password" required>
+            <i class="validation">
+              <span></span><span></span>
+            </i>
           </div>
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+            <input type="password" placeholder="Confirm your password" required>
+            <i class="validation">
+              <span></span><span></span>
+            </i>
           </div>
+        </div>
+        <div class="country-details">
+          <select id="counutryInput">
+            <option value="" selected>Select your country</option>
+            <option value="RO"><img src="https://flagsapi.com/RO/flat/64.png">Romania</option>
+            <option value="RO">fs</option>
+            <option value="RO">fsefsf</option>
+          </select>
         </div>
         <div class="gender-details">
           <input type="radio" name="gender" id="dot-1">
