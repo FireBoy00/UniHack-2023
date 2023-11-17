@@ -4,10 +4,12 @@
   <head>
     <meta charset="UTF-8">
     <title> Responsive Registration Form | CodingLab </title>
+    <script src="tari.js"></script>
     <link rel="stylesheet" href="../css/register.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-<body>
+<body onload="genereazaOptiuni()">
+  
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
@@ -21,6 +23,8 @@
             <span class="details">Username</span>
             <input type="text" placeholder="Enter your username" required>
           </div>
+         
+  
           <div class="input-box">
             <span class="details">Email</span>
             <input type="text" placeholder="Enter your email" required>
@@ -61,6 +65,11 @@
         <div class="button">
           <input type="submit" value="Register">
         </div>
+        <form class="tari">
+          <label for="tara">Country:</label>
+  <select id="tara" name="tara"></select>
+  <input type="button" value="Înregistrare" onclick="afiseazaTaraSelectata()">
+        </form>
       </form>
     </div>
   </div>
