@@ -3,7 +3,7 @@
     "electron": "^27.1.0"
   },
   "name": "unity-connect",
-  "description": "A basic desktop app that allows users to create profiles and join groups related to social causes",
+  "description": "An app that allows users to create profiles and join groups related to social causes",
   "version": "1.0.0",
   "main": "run.js",
   "dependencies": {
