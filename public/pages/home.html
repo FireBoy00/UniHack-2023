@@ -10,42 +10,99 @@
     <link rel="stylesheet" href="../css/home.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script defer src="../js/home.js"> </script>
+    
 </head>
 <body>
     <div class="options">
         <div class="options-up">
-            <div class="logo"> 
-                <img src="" alt="">
-                <span>NAME APP</span>
-            </div>
-            <div class="account">
-                <div id="fletter">
-                    <span>B</span>
+            <div id="logo">
+                <img src="../resources/logo_simplu.png" alt="">
+                <div class="app-name">
+                    <span id="unity">
+                        Unity
+                    </span>
+                    <span>
+                        Connect
+                    </span>
                 </div>
-                <span>NUME CONT</span>
             </div>
-            <div class="my-events">
-                <img>
-                <span>MY EVENTS</span>
+            <div id="discovery">
+                <ion-icon class="menu-icons" name="earth-outline"></ion-icon>
+                <span>Discovery</span>
             </div>
-            <div class="events">
-                <img>
-                <span>EVENTS</span>
+            <div id="my-events">
+                <ion-icon class="menu-icons" name="calendar-outline"></ion-icon>
+                <span>My Events</span>
             </div>
         </div>
         <div class="options-down">
             <div class="log-out" onclick="signOut()">
                 <ion-icon name="log-out-outline"></ion-icon>
                 <span>LOG OUT</span>
+            <div id="friends">
+                <ion-icon class="menu-icons" name="people-outline"></ion-icon>
+                <span>Friends</span>
             </div>
+            <div id="favorite">
+                <ion-icon class="menu-icons" name="heart-circle-outline"></ion-icon>
+                <span>Favorite</span>
+            </div>
+            </div>
+        <div class="options-down">
+                <div class="account" id="openModalBtn">
+                    <img src="../resources/logo_simplu.png" alt="">
+                    <span id="name"> NAME</span>
+                </div>
+            <div class="modal" id="myModal">            
+                 <div id = "WelcomeProfil"> 
+                    Hello Name!
+                </div>
+                <div id = "profile" onclick = "location.href='./profile.html' " >
+                    Profile
+                </div>
+                <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
+                <br>
+                <button onclick="logout()">Logout</button>
+            </div>	
+            
         </div>
-    </div>
-    <div class="content">
-        <div class="welcome-notify">
-            <span id="welcome">Welcome to APP, NAME!</span>
-            <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
-        </div>
+        <script>
+            var openModalBtn = document.querySelector('#openModalBtn');
+            var modal = document.getElementById('myModal');
+
+            openModalBtn.addEventListener('click', function(event) {
+                var rect = openModalBtn.getBoundingClientRect();
+                var buttonX = rect.left;
+                var buttonY = rect.bottom;
+
+                var modalWidth = 150; // Adjust as needed
+                var modalHeight = 150; // Adjust as needed
+
+                modal.style.left = '118px';
+                modal.style.top = '0px';
+                modal.style.width = modalWidth + 'px';
+                modal.style.height = modalHeight + 'px';
+
+                modal.style.display = 'block';
+                document.addEventListener('click', closeOnOutsideClick);
+            });
+
+            function closeOnOutsideClick(event) {
+                if (!modal.contains(event.target) && event.target !== openModalBtn) {
+                    modal.style.display = 'none';
+                }
+            }
+
+            function logout() {
+                location.href = "../pages/login.html"
+            }
+   
+        </script>
+
         <span id="discover">Discover and Book Events</span>
+
+
         <div class="ev-selection">
             <div class="events" id="ev-rec">
                 <span class="title">Enjoy</span>
@@ -61,34 +118,54 @@
         <div class="popular-creators">
             <span id="pop-text">Your Favorite Creators</span>
             <div class="your-creator">
-                <div class="photo">
-                    <img src="" alt="">
-                </div>
-                <div class="info">
-                    <div class="name">
-                        <span id="name">NUME</span>
-                    </div>
-                    <div class="origin-country">
-                        <span>TARA DE ORIGINE</span>
-                    </div>
-                </div>
+                
             </div>
+        </div>
+    </div>
+    <div class="events-load">
+        <span id="title">RECOMMENDED FOR YOU</span>
+        <div class="event-cont">
+
         </div>
     </div>
 </body>
 </html>
 
 <template id="popular-creater-temp">
-    <div class="photo">
-        <img src="" alt="">
-    </div>
-    <div class="info">
-        <div class="name">
-            <span id="name">NUME</span>
+    <div class="cnt">
+        <div class="photo">
+            <img src="" alt="">
         </div>
-        <div class="origin-country">
-            <span>TARA DE ORIGINE</span>
-            <img src="" alt="" id="country-creator">
+        <div class="rest">
+            <div class="info">
+                <div class="name">
+                    <span id="name">NUME</span>
+                </div>
+                <div class="origin-country">
+                    <span>TARA DE ORIGINE</span>
+                </div>
         </div>
+        <img id="country-photo" src="../resources/logo_simplu.png" alt="">
     </div>
 </template>
+
+<template id="ev">
+    <div class="chenar_timp_desc">
+      <div class="date_time" onmouseover="hoverEffon(this)" onmouseleave="hoverEffoff(this)">
+        <button class="join">Join</button>
+        <div class="date">
+          <h2>Today</h2>
+        </div>
+        <div class="time">
+          <h1>17:00</h1>
+        </div>
+      </div>
+      <div class="descriere">
+        <div class="d2">
+        <span class="text"> Bergen International Film</span>
+        <span class="favourites">Add to favourites</span>
+      </div>
+        <p class="text2">dhu9wbdw udq qygdqdn ndhdubw yqdvy8vwd bdqwuhd are dhqdud</p>
+      </div>
+    </div>
+  </template>
