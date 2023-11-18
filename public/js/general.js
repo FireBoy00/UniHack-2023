@@ -12,9 +12,19 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
-// Initialize Firebase Authentication and get a reference to the service
-const auth = firebase.auth();
+function checkIfUserLogged() {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/v8/firebase.User
+            // var uid = user.uid;
+            return true;
+        } else {
+            // User is signed out
+            return false
+        }
+    });
+}
 
 function signOut() {
     console.log("Logging out in 0 seconds!")

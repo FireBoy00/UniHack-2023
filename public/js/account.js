@@ -14,4 +14,4 @@ function checkIfUser() {
     });
 }
 
-// window.onload = checkIfUser()
+window.onload = checkIfUser()

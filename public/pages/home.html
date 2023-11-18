@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <title>Document</title>
-    <script defer src="../js/general.js"></script>
-    <link rel="stylesheet" href="../css/home.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script defer src="../js/home.js"> </script>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <script defer src="../js/general.js"></script>
+    <script defer src="../js/home.js"></script>
+    <title>UnityConnect - Home</title>
     
 </head>
 <body>
@@ -35,11 +37,6 @@
                 <ion-icon class="menu-icons" name="calendar-outline"></ion-icon>
                 <span>My Events</span>
             </div>
-        </div>
-        <div class="options-down">
-            <div class="log-out" onclick="signOut()">
-                <ion-icon name="log-out-outline"></ion-icon>
-                <span>LOG OUT</span>
             <div id="friends">
                 <ion-icon class="menu-icons" name="people-outline"></ion-icon>
                 <span>Friends</span>
@@ -97,8 +94,16 @@
             function logout() {
                 location.href = "../pages/login.html"
             }
-   
+
+            
         </script>
+    </div>
+    <div class="content">
+        <div class="aur">
+            <div class="welcome-notify">
+                <span id="welcome">Welcome to APP, NAME!</span>
+            </div>
+        </div>
 
         <span id="discover">Discover and Book Events</span>
 
@@ -122,12 +127,6 @@
             </div>
         </div>
     </div>
-    <div class="events-load">
-        <span id="title">RECOMMENDED FOR YOU</span>
-        <div class="event-cont">
-
-        </div>
-    </div>
 </body>
 </html>
 
@@ -148,24 +147,3 @@
         <img id="country-photo" src="../resources/logo_simplu.png" alt="">
     </div>
 </template>
-
-<template id="ev">
-    <div class="chenar_timp_desc">
-      <div class="date_time" onmouseover="hoverEffon(this)" onmouseleave="hoverEffoff(this)">
-        <button class="join">Join</button>
-        <div class="date">
-          <h2>Today</h2>
-        </div>
-        <div class="time">
-          <h1>17:00</h1>
-        </div>
-      </div>
-      <div class="descriere">
-        <div class="d2">
-        <span class="text"> Bergen International Film</span>
-        <span class="favourites">Add to favourites</span>
-      </div>
-        <p class="text2">dhu9wbdw udq qygdqdn ndhdubw yqdvy8vwd bdqwuhd are dhqdud</p>
-      </div>
-    </div>
-  </template>

@@ -9,17 +9,11 @@ const favorite = document.querySelector('#favorite');
 
 /// creating popular characters
 
-function copytemplate(temp, cont, number){
-
-    for ( let i = 1; i <= number; i++)
-    {
-        var clone = temp.content.cloneNode(true);
-        cont.appendChild(clone);
-    }
-    console.log(clone.innerHTML);
+function copytemplate(){
+    console.log(`User: ${checkIfUserLogged()}`)
 }
 
-window.onload = copytemplate(template, container, 3)
+window.onload = copytemplate()
 
 /// selecting menu
 
