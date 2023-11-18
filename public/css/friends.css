@@ -1,14 +1,220 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
 body{
-    min-height: 100vh;
-    min-width: 100vw;
-    height: 100vh;
-    width: 100vw;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
     overflow: hidden;
 }
 
-.cnt{
+.options{
+    width: 13.8%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    padding: 20px 0 0 10px;
+    background-color: black;
+    border-right: 1px solid #333;
+}
+
+.options-up #logo span{
+    font-size: 1.5rem;
+    display: flex;
+    flex-flow: column;
+}
+
+.options-up #logo .app-name{
+    display: flex;
+    flex-flow: column;
+}
+
+.options-up #logo img{
+    width: 45px;
+    height: 45px;
+}
+
+.options .options-up, .options .options-down{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 80%;
+}
+
+.options .options-down{
+    height: 20%;
+}
+
+.options .options-up div{
+    width: 90%;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 15px;
+
+    color: white;
+}
+
+.options .options-up #friends{
+    background-color: rgb(34, 34, 34);
+}
+
+.options .options-up div *, .options-down div *{
+    margin: 0 10px;
+}
+
+.options .options-up #logo{
+    margin-bottom: 70px;
+}
+
+.options .options-up .menu-icons{
+    width: 30px;
+    height: 30px;
+}
+
+.options .options-down .account{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.options .options-down .account img{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+
+.content{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+.bara-sus {
+    height: 8%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #666;
+    padding-bottom: 15px;
+
+}
+.has{
+    height: 100%;
+}
+.has:hover {
+    background-color: #666;
+}
+
+
+/* Add a black background color to the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: black;
+    height: 10%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+  /* Style the search box inside the navigation bar */
+  .topnav input[type=text] {
+    padding: 6px;
+    border: none;
+    font-size: 17px;
+    background-color: #333;
+    width: 60%;
+    outline: none;
+    color: white;
+  }
+  .rest {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+  }
+  .Add-friends {
+    background-color: rgb(3, 83, 26);
+    color: white;
+    width: 140px !important;
+  }
+  #ic {
+    height: 40%;
+    width: 2%;
+  }
+  .divul_suprem {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    overflow-y: auto;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .lista {
+   width: 40%;
+   height: 5%;
+    padding: 20px;
+    display: flex;
+    justify-content:space-between;
+
+  }
+  .lista:hover {
+    background-color: #333;
+  }
+  .ceva-num {
+    display: flex;
+    align-items: center;
+  }
+  .ceva{
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  .num {
+    color: white;
+    margin-left: 10px;
+  }
+  .buttoane button {
+    color: white;
+    border-radius: 50%;
+    height: 40px; 
+    width: 40px;
+    background-color: #1b1b1b;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .buttoane {
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+  }
+.comm,
+.ban {
+    color: white;
+    height: 30px;
+    width:  30px;
+}
+.bara-sus div{
+    width: calc(100% / 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

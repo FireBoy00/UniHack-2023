@@ -4,53 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="friends.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/friends.css">
     <script defer src="../js/friends.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    <div class="cnt">
-        <div class="upper">
-            <div class="photo">
-                <img src="../resources/seby centura.jpeg" alt="">
-            </div>
-            <div class="name-friends">
-                <div class="name">
-                    <span id="name">name</span>
+    <div class="options">
+        <div class="options-up">
+            <div id="logo">
+                <img src="../resources/logo_simplu.png" alt="">
+                <div class="app-name">
+                    <span id="unity">
+                        Unity
+                    </span>
+                    <span>
+                        Connect
+                    </span>
                 </div>
-                <div class="friends">
-                    <span>555 Friends</span>
-                </div>
             </div>
-            <div class="edit">
-                <button id="button-edit"></button>
+            <div id="discovery">
+                <ion-icon class="menu-icons" name="earth-outline"></ion-icon>
+                <span>Discovery</span>
             </div>
-        </div>
-        <div class="navbar">
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-        </div>
-        <div class="firends">
-
+            <div id="my-events">
+                <ion-icon class="menu-icons" name="calendar-outline"></ion-icon>
+                <span>My Events</span>
+            </div>
+            <div id="friends">
+                <ion-icon class="menu-icons" name="people-outline"></ion-icon>
+                <span>Friends</span>
+            </div>
+            <div id="favorite">
+                <ion-icon class="menu-icons" name="heart-circle-outline"></ion-icon>
+                <span>Favorite</span>
+            </div>
+            </div>
+        <div class="options-down">
+            <div class="account">
+                <img src="../resources/logo_simplu.png" alt="">
+                <span id="name"> NAME</span>
+            </div>
         </div>
     </div>
+    <div class="content">
+        <div class="bara-sus">
+            <div>
+                <ion-icon class="icon" name="accessibility-outline"></ion-icon>           
+            <span class="sp">Friends </span>
+            </div>
+            <div class="has"><span class="sp">Online </span></div>
+            <div class="has"><span class="sp">All</span> </span></div>
+            <div class="has"><span class="sp">Pending </span></div>
+           <div class="rest">
+            <div class="Add-friends">Add Friends </div>
+           </div>
+            
+        </div>
+        <div class="topnav">
+            <input type="text" placeholder="Search..">
+            <img id="ic" src="../resources/search.png" alt="">
+        </div>
+        <div class="divul_suprem">
+        <div class="lista">
+            <div class="ceva-num">
+            <img class="ceva" src="" alt="">
+            <span class="num">Nume</span>
+        </div>
+        <div class="buttoane">
+            <button>
+            <ion-icon class="comm" name="chatbox-outline"></ion-icon>
+        </button>
+            <button>
+                <ion-icon class="ban" name="ban-outline"></ion-icon>
+            </button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <template class="preten">
+        <div class="lista">
+            <div class="ceva-num">
+            <img class="ceva" src="" alt="">
+            <span class="num">Nume</span>
+        </div>
+        <div class="buttoane">
+            <button>
+            <ion-icon class="comm" name="chatbox-outline"></ion-icon>
+        </button>
+            <button>
+                <ion-icon class="ban" name="ban-outline"></ion-icon>
+            </button>
+        </div>
+    </template>
 </body>
+
 </html>
 
-<template>
-    <div class="cnt">
-        <div class="photo">
-            <img src="" alt="">
-        </div>
-        <div class="rest">
-            <div class="info">
-                <div class="name">
-                    <span id="name">NUME</span>
-                </div>
-                <div class="origin-country">
-                    <span>TARA DE ORIGINE</span>
-                </div>
-        </div>
-        <img id="country-photo" src="../resources/logo_simplu.png" alt="">
-    </div>
-</template>
