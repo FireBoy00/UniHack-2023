@@ -11,6 +11,21 @@
     
 </head>
 <body>
+    <div class="options">
+        <div class="options-up">
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+        </div>
+        <div class="options-down">
+            <div class="account">
+                <img src="../resources/logo_simplu.png" alt="">
+                <span id="name"> NAME</span>
+            </div>
+        </div>
+    </div>
     <div class="content">
         <div class="aur">
             <div class="welcome-notify">
@@ -20,7 +35,7 @@
             <div class = "speranta">
                 <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
                 
-                <div class="profil">
+                <div class="profilee">
                     <button class= "profil" id="openModalBtn"></button>
                     <div class="modal" id="myModal">
                         
@@ -38,17 +53,28 @@
         </div>
 
         <script>
+
             var openModalBtn = document.getElementById('openModalBtn');
             var modal = document.getElementById('myModal');
-            openModalBtn.addEventListener('click', function() {
+            openModalBtn.addEventListener('click', function(event) {
                 var rect = openModalBtn.getBoundingClientRect();
-                var buttonX = rect.left;
-                var buttonY = rect.bottom;
+                var buttonX = rect.left + window.scrollx;
+                var buttonY = rect.top + window.scrolly;
+                var buttonWidth = openModalBtn.offsetWidth;
+                var buttonHeight = openModalBtn.offsetHeight;
 
-                modal.style.left =  buttonX + 'px';
-                modal.style.bottom = ( buttonY + openModalBtn.offsetHeight) + 'px';
-                modal.style.width = '100px';
-                modal.style.height = '200px';
+                var modalWidth = 100; // Adjust as needed
+                var modalHeight = 200; // Adjust as needed
+
+                var modalX = buttonX + buttonWidth - modalWidth - 100; // Calculate X position
+                // 10 = modalWidth / 20
+                var modalY = buttonY + 130 ; // Calculate Y position
+                // 130 = modalHight * 13 / 20;
+
+                modal.style.left = modalX + 'px';
+                modal.style.top = modalY + 'px';
+                modal.style.width = modalWidth + 'px';
+                modal.style.height = modalHeight + 'px';
 
                 modal.style.display = 'block';
                 document.addEventListener('click', closeOnOutsideClick);
