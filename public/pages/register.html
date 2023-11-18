@@ -1,78 +1,88 @@
 <!DOCTYPE html>
 
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title> Responsive Registration Form | CodingLab </title>
-    <script src="tari.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/register.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-<body onload="genereazaOptiuni()">
-  
+    <script defer src="../js/general.js"></script>
+    <script defer src="../js/account.js"></script>
+    <script defer src="../js/register.js"></script>
+    <title>UnityConnect - Registration</title>
+  </head>
+<body>
+  <div class="error">
+    <div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse nemo accusantium quod? Odio totam neque, voluptas minima similique id incidunt quas. Dolorum quis quam explicabo magni eveniet distinctio possimus fugit!</div>
+  </div>
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="#">
+      <form onsubmit="signUp(event)">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <input class="name" type="text" placeholder="Enter your name" required>
           </div>
           <div class="input-box">
             <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
+            <input class="username" type="text" placeholder="Enter your username" required>
           </div>
-         
-  
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
+            <input class="email" type="email" placeholder="Enter your email" required>
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
+            <input class="tel" type="tel" placeholder="Enter your number" required>
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input class="pass" type="password" placeholder="Enter your password" required>
           </div>
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+            <input class="confPass" type="password" placeholder="Confirm your password" required>
           </div>
         </div>
+        <div class="country-details">
+          <select id="counutryInput">
+            <option value="" selected>Select your country</option>
+          </select>
+        </div>
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
+          <input type="radio" name="gender" id="dot-1" value="M">
+          <input type="radio" name="gender" id="dot-2" value="F">
+          <input type="radio" name="gender" id="dot-3" value="N">
           <span class="gender-title">Gender</span>
           <div class="category">
             <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
             </label>
           </div>
         </div>
         <div class="button">
           <input type="submit" value="Register">
         </div>
-        <form class="tari">
-          <label for="tara">Country:</label>
-  <select id="tara" name="tara"></select>
-  <input type="button" value="Înregistrare" onclick="afiseazaTaraSelectata()">
-        </form>
+        <div id="create-account-wrap">
+          <p>Already a member? 
+              <a href="login.html"> Login now! </a>
+          </p>
+      </div>
       </form>
     </div>
   </div>
-
 </body>
 </html>
