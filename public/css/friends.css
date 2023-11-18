@@ -1,0 +1,9 @@
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.cnt{
+    width: 100%;
+    height: 100%;
+}
