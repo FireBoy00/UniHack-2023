@@ -12,13 +12,14 @@ body{
 }
 
 .options{
-    width: 13.8%;
+    width: 13.8vw;
     height: 100vh;
     display: flex;
     flex-flow: column;
     padding: 20px 0 0 10px;
     background-color: black;
     border-right: 1px solid #333;
+    user-select: none;
 }
 
 .options-up #logo span{
@@ -99,7 +100,7 @@ body{
 
 
 .content{
-    width: 100%;
+    width: 86.2vw;
     height: 100vh;
     background-color: black;
     display: flex;
@@ -272,3 +273,96 @@ body{
     flex-flow: column;
 }
 
+/* event load */
+
+.events-load {
+    display: none;
+    flex-flow: column;
+    width: 86.2vw;
+    height: 100vh;
+    align-items: center;
+    background-color: black;
+  }
+
+.event-load #title{
+    height: 30px;
+    width: fit-content;
+}
+
+.events-load .event-cont{
+    width: 86.2vw;
+    height: calc(100vh - 30px);
+}
+
+  .chenar_timp_desc {
+    height: calc(20vh - 40px);
+    width: 35vw;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .join {
+    display: none;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green color */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .join:hover {
+    background-color: #45a049;
+  }
+  .date_time {
+    height: 100%;
+    width: 30%;
+    background-color: #61adfb;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .date_time.hide h2, .date_time.hide h1 {
+    display: none;
+  }
+  .descriere {
+    background-color: #333;
+    width: 70%;
+    height: 100%;
+    color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .text {
+    margin-left: 15px;
+    font-size: 2em;
+  
+  }
+  .date_time h1, .date_time h2 {
+    margin: 0;
+    transition: background-color 1s;
+  }
+  .date_time:hover {
+    background-color: #2d2a2a; 
+    transition: background-color 0.3s ease;
+  }
+  
+  .date {
+    height: 40px;
+  }
+  
+  .options-down {
+    margin-bottom: 30px; 
+  }
+  .d2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .text2 {
+    margin-left: 15px;
+  }

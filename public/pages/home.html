@@ -49,31 +49,9 @@
         </div>
     </div>
     <div class="content">
-        <div class="aur">
             <div class="welcome-notify">
-                <span id="welcome">Welcome to APP, NAME!</span>
+                <span id="welcome">Welcome to Unity Connect, NAME!</span>
             </div>
-              
-            <div class = "speranta">
-                <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
-                
-                <div class="profilee">
-                    <button class= "profil" id="openModalBtn"></button>
-                    <div class="modal" id="myModal">
-                        
-                        <div id = "WelcomeProfil"> 
-                            Hello Name!
-                        </div>
-                        <div id = "profile" onclick = "location.href='./profile.html' " >
-                            Profile
-                        </div>
-                        <button onclick="logout()">Logout</button>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <script>
 
             var openModalBtn = document.getElementById('openModalBtn');
@@ -112,16 +90,8 @@
             function logout() {
                 location.href = "../pages/login.html"
             }
-
-            
+   
         </script>
-    
-
-        
-    
-        
-        
-        
 
         <span id="discover">Discover and Book Events</span>
 
@@ -145,6 +115,12 @@
             </div>
         </div>
     </div>
+    <div class="events-load">
+        <span id="title">RECOMMENDED FOR YOU</span>
+        <div class="event-cont">
+
+        </div>
+    </div>
 </body>
 </html>
 
@@ -165,3 +141,24 @@
         <img id="country-photo" src="../resources/logo_simplu.png" alt="">
     </div>
 </template>
+
+<template id="ev">
+    <div class="chenar_timp_desc">
+      <div class="date_time" onmouseover="hoverEffon(this)" onmouseleave="hoverEffoff(this)">
+        <button class="join">Join</button>
+        <div class="date">
+          <h2>Today</h2>
+        </div>
+        <div class="time">
+          <h1>17:00</h1>
+        </div>
+      </div>
+      <div class="descriere">
+        <div class="d2">
+        <span class="text"> Bergen International Film</span>
+        <span class="favourites">Add to favourites</span>
+      </div>
+        <p class="text2">dhu9wbdw udq qygdqdn ndhdubw yqdvy8vwd bdqwuhd are dhqdud</p>
+      </div>
+    </div>
+  </template>
