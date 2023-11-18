@@ -1,8 +1,11 @@
 const template = document.querySelector('#popular-creater-temp');
 const container = document.querySelector('.your-creator');
 
-const events = document.querySelector('.events');
-const myevents = document.querySelector('.my-events');
+const discovery = document.querySelector('#discovery');
+const myevents = document.querySelector('#my-events');
+const friends = document.querySelector('#friends');
+const favorite = document.querySelector('#favorite');
+
 
 function copytemplate(temp, cont, number){
 
@@ -14,14 +17,32 @@ function copytemplate(temp, cont, number){
     console.log(clone.innerHTML);
 }
 
-events.addEventListener('click',() => {
-    events.style.backgroundColor = 'rgb(34, 34, 34)';
+discovery.addEventListener('click',() => {
+    discovery.style.backgroundColor = 'rgb(34, 34, 34)';
     myevents.style.backgroundColor = 'black';
+    friends.style.backgroundColor = 'black';
+    favorite.style.backgroundColor = 'black';
 });
 
 myevents.addEventListener('click',() => {
     myevents.style.backgroundColor = 'rgb(34, 34, 34)';
-    events.style.backgroundColor = 'black';
+    discovery.style.backgroundColor = 'black';
+    favorite.style.backgroundColor = 'black';
+    friends.style.backgroundColor = 'black';
+});
+
+friends.addEventListener('click',() => {
+    friends.style.backgroundColor = 'rgb(34, 34, 34)';
+    discovery.style.backgroundColor = 'black';
+    favorite.style.backgroundColor = 'black';
+    myevents.style.backgroundColor = 'black';
+});
+
+favorite.addEventListener('click',() => {
+    favorite.style.backgroundColor = 'rgb(34, 34, 34)';
+    discovery.style.backgroundColor = 'black';
+    myevents.style.backgroundColor = 'black';
+    friends.style.backgroundColor = 'black';
 });
 
 window.onload = copytemplate(template, container, 3)
