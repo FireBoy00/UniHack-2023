@@ -167,7 +167,6 @@ body{
   }
   .lista {
    width: 40%;
-   height: 5%;
     padding: 20px;
     display: flex;
     justify-content:space-between;
