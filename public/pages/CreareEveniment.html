@@ -13,7 +13,7 @@
         <h1> Nume Eveniment </h1>
     </div>
 
-    <div id = "content">
+    <div class="box" id = "content">
 
         <div id = "informatii">
             <div id = "USER">
@@ -53,13 +53,9 @@
 
                     <div class="input-color">
                         <span class="details"> Event color: </span>
-                        <input type="color" id="colorPicker" name="colorPicker">
+                        <input type="color" default="white" id="colorPicker" name="colorPicker">
                     </div>
                 </div>
-            </div>
-
-            <div class="join-now">
-                <a href="#" class="join-now-button">Join Now</a>
             </div>
                 
             </div>
@@ -67,20 +63,28 @@
 
         <br>
 
-        <div id = "Description">
+        <div class="box" id = "Description">
             <span class="details">Description:</span>
-            <textarea rows="5" maxlength="800" id =  casuta-pentru-descriere" placeholder="Write a description about your event" required></textarea>
+            <textarea rows="5" maxlength="800" id ="casuta-pentru-descriere" placeholder="Write a description about your event" required></textarea>
         </div>
 
         <br>
 
-        <div id = "participanti">
-            <div class="account" id="openModalBtn">
-                <img src="../resources/logo_simplu.png" alt="">
-                <span id="name"> NAME</span>
-            </div>
+        <div class="box" id = "participanti">
+            <strong>Participants:</strong>
+        </div>
+
+        <div class="join-now">
+            <a href="#" class="join-now-button">Join Now</a>
         </div>
 
     </div>
 </body>
 </html>
+
+<template>
+    <div class="account" id="openModalBtn">
+        <img src="../resources/logo_simplu.png" alt="">
+        <span id="name"> NAME</span>
+    </div>
+</template>

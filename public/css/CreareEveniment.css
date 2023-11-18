@@ -7,7 +7,8 @@
 #Titlu{
     display: flex;
     justify-content: center;
-    color: white
+    color: white;
+    margin-top: 5vh;
 }
 body{
   height: 100vh;
@@ -25,24 +26,31 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 #informatii{
     background-color: #292828;
     color: white;
     width: 70vw;
-    padding: 25px 30px;
+    padding: 10px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
     position: center;
 }
+
+#informatii .user-details .input-box{
+    margin: 10px 0;
+}
+
 span.details {
     min-width: 100px; /* Stabilim o lățime minimă pentru a uniformiza lungimea */
     display: inline-block;
 }
 .join-now {
     text-align: center;
+    margin-top: 20px;
 }
 .join-now-button {
     display: inline-block;
@@ -62,20 +70,27 @@ span.details {
     background-color: #292828;
     color: white;
     width: 70vw;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     padding: 25px 30px;
+    padding-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    margin-top: 50px;
 }
 #casuta-pentru-descriere{
     width: 100%;
+    height: 96%;
     resize: vertical;
     box-sizing: border-box;
+    margin: 10px 30px;
 }
 .user-details input{
-    width: 14vw;
+    width: 18vw;
 }
 #colorPicker {
-    width: calc(14vw + 4px);
+    width: calc(18vw + 3px);
 }
 #participanti{
     background-color: #292828;
@@ -88,6 +103,11 @@ span.details {
     flex-direction: column;
     position: center;
 }
+
+#participanti strong{
+    margin-bottom: 10px;
+}
+
 .account{
     width: 100%;
     height: 90%;
@@ -102,4 +122,9 @@ span.details {
     height: 30px;
     width: 30px;
     margin-right: 10px;
+}
+
+.box{
+    margin: 10px 0;
+    height: 15vh;
 }
