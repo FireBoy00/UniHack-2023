@@ -1,8 +1,26 @@
+body {
+    display: flex;
+    flex-flow: column;
+}
+.error {
+    display: none;
+    border-radius: 5px;
+    max-width: 700px;
+    max-height: 100px;
+    color: var(--text);
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgba(158, 12, 12, 0.801);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.error.show {
+    display: block;
+}
 .container{
     max-width: 700px;
     width: 100%;
     background-color: #fff;
-    padding: 25px 30px;
+    padding: 25px 30px 5px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
@@ -71,7 +89,7 @@ form input[type="radio"]{
 }
 form .button{
     height: 45px;
-    margin: 35px 0;
+    margin: 35px 0px 0px 0px;
 }
 form .button input{
     height: 100%;
@@ -112,4 +130,8 @@ form .button input:hover{
     .container .content .category{
         flex-direction: column;
     }
+}
+#create-account-wrap {
+    width: 100%;
+    text-align: center;
 }

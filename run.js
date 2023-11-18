@@ -10,6 +10,8 @@ function createWindow () {
     width: 1280,
     height: 720,
     webPreferences: {
+      // nodeIntegration: true, // Enable Node.js integration
+      // contextIsolation: false, // Disable context isolation
       nodeIntegration: true,
       devTools: true
     }

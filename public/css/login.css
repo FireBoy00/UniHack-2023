@@ -2,6 +2,22 @@ body {
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
     color: var(--text);
+    display: flex;
+    flex-flow: column;
+}
+.error {
+    display: none;
+    border-radius: 5px;
+    max-width: 705px;
+    height: fit-content;
+    color: var(--text);
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgba(158, 12, 12, 0.801);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.error.show {
+    display: block;
 }
 
 h2 {

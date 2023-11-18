@@ -1,3 +1,4 @@
+window.onload = console.log(window.location.href)
 const firebaseConfig = {
     apiKey: "AIzaSyBsiV-Qx3FRbzaP1KQmkOSo0x9CHqOg0mA",
     authDomain: "unityconnect-5.firebaseapp.com",
@@ -14,3 +15,17 @@ firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = firebase.auth();
+
+function signOut() {
+    console.log("Logging out in 0 seconds!")
+    setTimeout(() => {
+        firebase.auth().signOut()
+            .then(() => {
+                console.log('User signed out!');
+                location.href = "../pages/login.html"
+            })
+            .catch((error) => {
+                console.error('Error signing out: ', error);
+            });
+    }, 0);
+}

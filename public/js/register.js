@@ -15,21 +15,66 @@ function genereazaOptiuni() {
     }
 }
 
-function signUp() {
-    var email = document.querySelector("input[type='email']").value
-    var password = document.querySelector("input[type='password']").value
+var errMsg = document.querySelector(".error .message")
+var form = document.querySelector("form")
+function aSignUp(email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-        // Signed in 
-        var user = userCredential.user;
-        alert(`User ${userCredential.user.uid} signed up!`)
-        window.location.href = '../pages/login.html'
-    })
-    .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.error(`Registration error: ${error.message}\n${error.code}`)
-    });
+        .then((userCredential) => {
+            // Signed in 
+            var user = userCredential.user;
+            errMsg.innerHTML = `User ${userCredential.user.uid} signed up!\nYou'll be redirected in 3 seconds!`
+            errMsg.parentNode.classList.add("show")
+            var name = form.querySelector(".name").value
+            var username = form.querySelector(".username").value
+            var email = form.querySelector(".email").value
+            var tel = form.querySelector(".tel").value
+            var country = form.querySelector("#counutryInput").value
+            var gender = form.querySelector("input[type='radio']:checked").value
+            firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid).set({
+                full_name: name,
+                username: username,
+                email: email,
+                phone: tel,
+                country: country,
+                gender: gender
+            })
+            .then(() => {
+                console.log(`Account details stored successfully for user [${firebase.auth().currentUser.uid}]`);
+                setTimeout(() => {
+                    window.location.href = '../pages/login.html'
+                }, 3000);
+            })
+            .catch((error) => {
+                console.error("Error storing account details: ", error);
+            });
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            errMsg.innerHTML = error.message
+            errMsg.parentNode.classList.add("show")
+            console.error(`Registration error: ${error.message}\n${error.code}`)
+            // form.reset()
+        });
+}
+
+function signUp(e) {
+    e.preventDefault()
+    var email = form.querySelector("input[type='email']").value
+    var password = form.querySelector("input[type='password']").value
+    if (form.querySelector(".pass").value !== form.querySelector(".confPass").value) {
+        errMsg.parentNode.classList.add("show")
+        errMsg.innerHTML = "The passwords don't match"
+    }else if (form.querySelector("#counutryInput").value === "") {
+        errMsg.parentNode.classList.add("show")
+        errMsg.innerHTML = "Please select a country"
+    }else if (!form.querySelector("input[type='radio']:checked")){
+        errMsg.parentNode.classList.add("show")
+        errMsg.innerHTML = "Please select your gender"
+    }else {
+        aSignUp(email, password)
+    }
+    return false;
 }
 
 window.onload = genereazaOptiuni()

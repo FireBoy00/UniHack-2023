@@ -1,14 +1,23 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/login.css">
+        <script defer src="../js/general.js"></script>
+        <script defer src="../js/account.js"></script>
+        <script src="../js/login.js"></script>
         <title>UnityConnect - Login</title>
-            <link rel="stylesheet" href="../css/general.css">
-            <link rel="stylesheet" href="../css/login.css">
     </head>
     <body>
+        <div class="error">
+            <div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse nemo accusantium quod? Odio totam neque, voluptas minima similique id incidunt quas. Dolorum quis quam explicabo magni eveniet distinctio possimus fugit!</div>
+        </div>
         <div id="login-form-wrap">
             <h2>Login</h2>
-            <form id="login-form">
+            <form onsubmit="loginUser(event)" id="login-form">
                 <p>
                 <input type="email" 
                     id="email" 
