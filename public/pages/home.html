@@ -42,59 +42,37 @@
             </div>
             </div>
         <div class="options-down">
-            <div class="account">
-                <img src="../resources/logo_simplu.png" alt="">
-                <span id="name"> NAME</span>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <div class="aur">
-            <div class="welcome-notify">
-                <span id="welcome">Welcome to APP, NAME!</span>
-            </div>
-              
-            <div class = "speranta">
-                <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
-                
-                <div class="profilee">
-                    <button class= "profil" id="openModalBtn"></button>
-                    <div class="modal" id="myModal">
-                        
-                        <div id = "WelcomeProfil"> 
-                            Hello Name!
-                        </div>
-                        <div id = "profile" onclick = "location.href='./profile.html' " >
-                            Profile
-                        </div>
-                        <button onclick="logout()">Logout</button>
-                        <br>
-                    </div>
+                <div class="account" id="openModalBtn">
+                    <img src="../resources/logo_simplu.png" alt="">
+                    <span id="name"> NAME</span>
                 </div>
-            </div>
+            <div class="modal" id="myModal">            
+                 <div id = "WelcomeProfil"> 
+                    Hello Name!
+                </div>
+                <div id = "profile" onclick = "location.href='./profile.html' " >
+                    Profile
+                </div>
+                <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
+                <br>
+                <button onclick="logout()">Logout</button>
+            </div>	
+            
         </div>
-
         <script>
-
-            var openModalBtn = document.getElementById('openModalBtn');
+            var openModalBtn = document.querySelector('#openModalBtn');
             var modal = document.getElementById('myModal');
+
             openModalBtn.addEventListener('click', function(event) {
                 var rect = openModalBtn.getBoundingClientRect();
-                var buttonX = rect.left + window.scrollx;
-                var buttonY = rect.top + window.scrolly;
-                var buttonWidth = openModalBtn.offsetWidth;
-                var buttonHeight = openModalBtn.offsetHeight;
+                var buttonX = rect.left;
+                var buttonY = rect.bottom;
 
-                var modalWidth = 100; // Adjust as needed
-                var modalHeight = 200; // Adjust as needed
+                var modalWidth = 150; // Adjust as needed
+                var modalHeight = 150; // Adjust as needed
 
-                var modalX = buttonX + buttonWidth - modalWidth - 100; // Calculate X position
-                // 10 = modalWidth / 20
-                var modalY = buttonY + 130 ; // Calculate Y position
-                // 130 = modalHight * 13 / 20;
-
-                modal.style.left = modalX + 'px';
-                modal.style.top = modalY + 'px';
+                modal.style.left = '118px';
+                modal.style.top = '0px';
                 modal.style.width = modalWidth + 'px';
                 modal.style.height = modalHeight + 'px';
 
@@ -105,7 +83,6 @@
             function closeOnOutsideClick(event) {
                 if (!modal.contains(event.target) && event.target !== openModalBtn) {
                     modal.style.display = 'none';
-                    document.removeEventListener('click', closeOnOutsideClick);
                 }
             }
 
@@ -115,13 +92,13 @@
 
             
         </script>
-    
-
-        
-    
-        
-        
-        
+    </div>
+    <div class="content">
+        <div class="aur">
+            <div class="welcome-notify">
+                <span id="welcome">Welcome to APP, NAME!</span>
+            </div>
+        </div>
 
         <span id="discover">Discover and Book Events</span>
 

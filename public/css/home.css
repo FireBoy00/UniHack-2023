@@ -84,7 +84,6 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 45px;
     margin-bottom: 15px;
     color: white;
 }
@@ -94,6 +93,37 @@ body{
     width: 30px;
     margin-right: 10px;
 }
+
+.aur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .speranta {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profil {
+    width: 90%;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: black ;
+  }
+
+  .modal {
+    display: none;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    border-radius: 10%;
+  }
 
 /* content */
 
@@ -131,39 +161,7 @@ body{
     color: white;
     
 }
-.aur {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .speranta {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profil {
-    background-color: blue;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
 
- 
-  
-  .modal {
-      display: none;
-      text-align: center;
-      align-items: center;
-      transform: translate(-50%, -50%);
-      background-color: black;
-      padding: 20px;
-      border: 1px solid #ccc;
-      z-index: 1000;
-      border-radius: 10%;
-      overflow: auto;
-      position: absolute;
-  }
   #profile{
     user-select: none;
     cursor: pointer;
