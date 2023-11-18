@@ -1,7 +1,7 @@
 
 function test() {
   const ev = document.querySelector("#ev")
-  const body = document.querySelector(".cont")
+  const body = document.querySelector(".event-load")
   for (let i = 0; i < 25; i++) {
     var clone = ev.content.cloneNode(true)
     body.append(clone)
