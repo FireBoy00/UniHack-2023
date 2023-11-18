@@ -1,8 +1,8 @@
 const {app, BrowserWindow, webContents} = require("electron")
+const path = require("path")
 try {
   require('electron-reloader')(module);
 } catch (_) {}
-const path = require("path")
 
 let mainWindow;
 function createWindow () {
@@ -10,14 +10,16 @@ function createWindow () {
     width: 1280,
     height: 720,
     webPreferences: {
+      // nodeIntegration: true, // Enable Node.js integration
+      // contextIsolation: false, // Disable context isolation
       nodeIntegration: true,
       devTools: true
     }
   })
   
   // mainWindow.webContents.openDevTools()
+  // mainWindow.setMenu(null)
   mainWindow.loadFile(path.join(__dirname, './public/pages/login.html'))
-  mainWindow.setMenu(null)
 }
 
 app.on('ready', createWindow)
