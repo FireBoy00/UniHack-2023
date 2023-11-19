@@ -63,10 +63,9 @@
                     <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
                 </div>
                 <div id = "pentru-buton">
-                    <button id = "logout" onclick="logout()">Logout</button>
+                    <button id = "logout" onclick="signOut()">Logout</button>
                     <ion-icon name="log-out-outline" id = "logout-icon"> </ion-icon>
                 </div>
-
             </div>	
             
         </div>
@@ -155,12 +154,16 @@
           <h1>17:00</h1>
         </div>
       </div>
-      <div class="descriere">
+      <div class="descriere" onclick="openEvent()">
         <div class="d2">
-        <span class="text"> Bergen International Film</span>
-        <span class="favourites">Add to favourites</span>
-      </div>
-        <p class="text2">dhu9wbdw udq qygdqdn ndhdubw yqdvy8vwd bdqwuhd are dhqdud</p>
+            <span class="text"> Bergen International Film</span>
+        </div>
+        <div class="desc">
+            <p class="text2">dhu9wbdw udq qygdqdn ndhdubw yqdvy8vwd bdqwuhd are dhqdugsdgsdhsdhsdhdshdshsdfhsdhsdhdshdsjnfsjdfsjfsjsjsjsd</p>
+        </div>
+        <div class="add-fav">
+            <ion-icon name="star"></ion-icon>
+        </div>
       </div>
     </div>
   </template>

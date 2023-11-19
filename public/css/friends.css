@@ -8,6 +8,7 @@ body{
     min-width: 100vw;
     display: flex;
     overflow: hidden;
+    user-select: none;
 }
 
 .options{
@@ -222,6 +223,9 @@ margin: 5px 5px 5px 5px;
     background-color: rgb(3, 83, 26);
     color: white;
     width: 140px !important;
+  }
+  .Add-friends:hover {
+    background-color: rgb(7, 192, 7);
   }
   #ic {
     height: 40%;
