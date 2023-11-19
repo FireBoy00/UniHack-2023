@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <link rel="stylesheet" href="../css/CreareEveniment.css">
-    <script defer src="../js/CreareEveniment.js"> </script>
+    <script defer src="../js/general.js"></script>
+    <script defer src="../js/CreareEveniment.js"></script>
+    <title>UnityConnect - View event</title>
 </head>
 <body>
     <div id = "Titlu">
-        <h1> Nume Eveniment </h1>
+        <input type="text" class="title" value="New Event">
     </div>
 
     <div class="box" id = "content">
@@ -19,18 +23,18 @@
             <div id = "USER">
                 <div class="user-details">
                     <div class="input-box">
-                        <span class="details">Full Name:</span>
-                        <input type="text" placeholder="Enter your name" required>
+                        <span class="details">Creator:</span>
+                        <input class="creator" type="text" placeholder="Loading..." required disabled>
                     </div>
 
                     <div class="input-box">
                         <span class="details">Select Date:</span>
-                        <input type="date" id="datepicker" name="date">
+                        <input class="date" type="date" id="datepicker" name="date">
                     </div>
 
                     <div class="input-box">
                         <span class="details">Select time:</span>
-                        <input type="time" id="timepicker" name="time" >
+                        <input class="time" type="time" id="timepicker" name="time" >
                     </div>
                     
                 </div>
@@ -38,12 +42,12 @@
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Language:</span>
-                        <input type="text" placeholder="Select your language" required>
+                        <input class="language" type="text" placeholder="Select your language" required>
                     </div>
 
                     <div class="input-box">
                         <span class="details"> Location: </span>
-                        <input type="text" placeholder="Select location" required>
+                        <input class="location" type="text" placeholder="Select location" required>
                     </div>
 
                     <!-- <div class="input-box">
@@ -53,7 +57,7 @@
 
                     <div class="input-color">
                         <span class="details"> Event color: </span>
-                        <input type="color" default="white" id="colorPicker" name="colorPicker">
+                        <input class="color" type="color" default="white" id="colorPicker" name="colorPicker">
                     </div>
                 </div>
             </div>
@@ -65,13 +69,11 @@
 
         <div class="box" id = "Description">
             <span class="details">Description:</span>
-            <textarea rows="5" maxlength="800" id ="casuta-pentru-descriere" placeholder="Write a description about your event" required></textarea>
+            <textarea class="description" rows="5" maxlength="800" id ="casuta-pentru-descriere" placeholder="Write a description about your event" required></textarea>
         </div>
 
-        <br>
-
         <div class="box" id = "participanti">
-            <strong>Participants:</strong>
+            <span>Participants:</span>
         </div>
 
         <div class="join-now">
