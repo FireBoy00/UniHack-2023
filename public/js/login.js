@@ -6,8 +6,9 @@ function loginUser(e) {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
         // Signed in
-        var user = userCredential.user;
-        errMsg.innerHTML = `User ${userCredential.user.uid} logged up!`
+        var user = userCredential.user.uid;
+        errMsg.innerHTML = `User ${user} logged up!`
+        localStorage.setItem("user", user)
         window.location.href = '../pages/home.html'
     })
     .catch((err) => {

@@ -1,19 +1,9 @@
 const template = document.querySelector('#popular-creater-temp');
 const container = document.querySelector('.your-creator');
-
 const discovery = document.querySelector('#discovery');
 const myevents = document.querySelector('#my-events');
 const friends = document.querySelector('#friends');
 const favorite = document.querySelector('#favorite');
-
-
-/// creating popular characters
-
-function copytemplate(){
-    console.log(`User: ${checkIfUserLogged()}`)
-}
-
-window.onload = copytemplate()
 
 /// selecting menu
 
@@ -59,10 +49,9 @@ favorite.addEventListener('click',() => {
     loadevents('favorite-event',25);
 });
 
-/// selecting filter 
+/// selecting filter
 const content = document.querySelector('body .content');
 const ev_load = document.querySelector('body .events-load');
-
 const rec = document.querySelector('#ev-rec');
 const fav = document.querySelector('#ev-fav-creators');
 const upcoming = document.querySelector('#ev-year');
@@ -84,10 +73,6 @@ upcoming.addEventListener('click', () => {
     ev_load.style.display = 'flex';
     loadevents('upcoming', 25);
 })
-
-
-
-/// creating eventsbafter selecting filter
 
 function loadevents(location, number) {
     const ev = document.querySelector("#ev")
@@ -147,3 +132,16 @@ function loadevents(location, number) {
         textContainer.innerHTML = content.substring(0, content.lastIndexOf(' ', (maxRows * 10))) + '...';
       }
   })
+
+function loadUI() {
+    if (!localStorage.getItem("user")) {
+        location.href = "../pages/login.html"
+    }
+    firebase.firestore().collection("users").doc(localStorage.getItem("user")).get().then((doc) => {
+        document.querySelector(".options-down .account span").innerHTML = doc.data().full_name
+        document.querySelector("span#welcome").innerHTML = `Welcome to UnityConnect, ${doc.data().username}!`
+        document.querySelector(".options-down #WelcomeProfil").innerHTML = `Hello ${doc.data().username}!`
+    })
+}
+
+window.onload = loadUI()

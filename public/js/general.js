@@ -12,26 +12,13 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-function checkIfUserLogged() {
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-            // User is signed in, see docs for a list of available properties
-            // https://firebase.google.com/docs/reference/js/v8/firebase.User
-            // var uid = user.uid;
-            return true;
-        } else {
-            // User is signed out
-            return false
-        }
-    });
-}
-
 function signOut() {
     console.log("Logging out in 0 seconds!")
     setTimeout(() => {
         firebase.auth().signOut()
             .then(() => {
                 console.log('User signed out!');
+                localStorage.removeItem("user")
                 location.href = "../pages/login.html"
             })
             .catch((error) => {
