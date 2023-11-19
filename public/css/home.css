@@ -314,7 +314,7 @@ body{
     background-color: black;
   }
 
-.event-load #title{
+.events-load #title{
     height: 30px;
     width: fit-content;
 }
