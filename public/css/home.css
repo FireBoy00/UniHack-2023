@@ -3,6 +3,7 @@
     font-family: "Poppins", sans-serif;
 }
 body{
+  user-select: none;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -94,6 +95,38 @@ body{
     width: 30px;
     margin-right: 10px;
 }
+#profil-notificare
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#WelcomeProfil
+{
+    display: flex;
+    justify-content: center;
+}
+#logout{
+  display: flex;
+  border-top: 1px solid rgb(34, 34, 34);
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+#pentru-buton{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logout-icon{
+  color:white;
+}
+
+
+#WelcomeProfil, #profile, #bell-not, #logout{
+  margin: 5px 5px 5px 5px;
+}
 
 .aur {
     display: flex;
@@ -116,15 +149,14 @@ body{
   .modal {
     display: none;
     position: relative;
-    text-align: center;
-    align-items: center;
     transform: translate(-50%, -50%);
     background-color: black;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #ccc;
     z-index: 1000;
     border-radius: 10%;
   }
+
 
 /* content */
 
