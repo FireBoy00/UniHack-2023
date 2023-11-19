@@ -12,6 +12,7 @@ const favorite = document.querySelector('#favorite');
 
 window.onload = () => {
     var page = localStorage.getItem('page-opened');
+    console.log(page)
     switch (page){
         case 'myevents':
             console.log(1)
