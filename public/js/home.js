@@ -1,19 +1,9 @@
 const template = document.querySelector('#popular-creater-temp');
 const container = document.querySelector('.your-creator');
-
 const discovery = document.querySelector('#discovery');
 const myevents = document.querySelector('#my-events');
 const friends = document.querySelector('#friends');
 const favorite = document.querySelector('#favorite');
-
-
-/// creating popular characters
-
-function copytemplate(){
-    console.log(`User: ${checkIfUserLogged()}`)
-}
-
-window.onload = copytemplate()
 
 /// selecting menu
 
@@ -46,10 +36,9 @@ favorite.addEventListener('click',() => {
     friends.style.backgroundColor = 'black';
 });
 
-/// selecting filter 
+/// selecting filter
 const content = document.querySelector('body .content');
 const ev_load = document.querySelector('body .events-load');
-
 const rec = document.querySelector('#ev-rec');
 
 rec.addEventListener('click', () => {
@@ -58,31 +47,34 @@ rec.addEventListener('click', () => {
 })
 
 /// creating eventsbafter selecting filter
+  
+function hoverEffon(cont) {
+    // Hide the text
+    cont.querySelector('.date').style.display = 'none';
+    cont.querySelector('.time').style.display = 'none';
 
-function test() {
-    const ev = document.querySelector("#ev")
-    const body = document.querySelector(".event-cont")
-    for (let i = 0; i < 25; i++) {
-      var clone = ev.content.cloneNode(true)
-      body.append(clone)
+    // Show the button
+    cont.querySelector('.join').style.display = 'block';
+}
+function hoverEffoff(cont) {
+    // Show the text
+    cont.querySelector('.date').style.display = 'block';
+    cont.querySelector('.time').style.display = 'block';
+
+    // Hide the button
+    cont.querySelector('.join').style.display = 'none';
+}
+
+
+function loadUI() {
+    if (!localStorage.getItem("user")) {
+        location.href = "../pages/login.html"
     }
-  }
-  
-  function hoverEffon(cont) {
-     // Hide the text
-     cont.querySelector('.date').style.display = 'none';
-     cont.querySelector('.time').style.display = 'none';
-  
-     // Show the button
-     cont.querySelector('.join').style.display = 'block';
-  }
-  function hoverEffoff(cont) {
-     // Show the text
-     cont.querySelector('.date').style.display = 'block';
-     cont.querySelector('.time').style.display = 'block';
-  
-     // Hide the button
-     cont.querySelector('.join').style.display = 'none';
-  }
+    firebase.firestore().collection("users").doc(localStorage.getItem("user")).get().then((doc) => {
+        document.querySelector(".options-down .account span").innerHTML = doc.data().full_name
+        document.querySelector("span#welcome").innerHTML = `Welcome to UnityConnect, ${doc.data().username}!`
+        document.querySelector(".options-down #WelcomeProfil").innerHTML = `Hello ${doc.data().username}!`
+    })
+}
 
-  window.onload = test();
+window.onload = loadUI()
