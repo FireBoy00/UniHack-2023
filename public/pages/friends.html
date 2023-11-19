@@ -42,11 +42,64 @@
             </div>
             </div>
         <div class="options-down">
-            <div class="account">
-                <img src="../resources/logo_simplu.png" alt="">
-                <span id="name"> NAME</span>
-            </div>
+                <div class="account" id="openModalBtn">
+                    <img src="../resources/logo_simplu.png" alt="">
+                    <span id="name"> NAME</span>
+                </div>
+            <div class="modal" id="myModal">            
+                <div id = "WelcomeProfil"> 
+                    Hello Name!
+                </div>
+                <div id = "profil-notificare">
+                    <div id = "profile" onclick = "location.href='./profile.html' " >
+                        Profile
+                    </div>
+                    
+                    <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
+                </div>
+                <div id = "pentru-buton">
+                    <button id = "logout" onclick="logout()">Logout</button>
+                    <ion-icon name="log-out-outline" id = "logout-icon"> </ion-icon>
+                </div>
+
+            </div>	
+            
         </div>
+        <script>
+            var openModalBtn = document.querySelector('#openModalBtn');
+            var modal = document.getElementById('myModal');
+
+            openModalBtn.addEventListener('click', function(event) {
+                var rect = openModalBtn.getBoundingClientRect();
+                var buttonX = rect.left;
+                var buttonY = rect.bottom;
+
+                var modalWidth = 170; // Adjust as needed
+                var modalHeight = 300; // Adjust as needed
+
+                modal.style.left = '120px';
+                modal.style.top = '0px';
+                modal.style.width = modalWidth + 'px';
+                modal.style.height = modalHeight + 'px';
+
+                modal.style.display = 'block';
+                openModalBtn.style.opacity = 0;
+                document.addEventListener('click', closeOnOutsideClick);
+            });
+
+            function closeOnOutsideClick(event) {
+                if (!modal.contains(event.target) && event.target !== openModalBtn) {
+                    modal.style.display = 'none';
+                    openModalBtn.style.opacity = 1;
+                }
+            }
+
+            function logout() {
+                location.href = "../pages/login.html"
+            }
+
+            
+        </script>
     </div>
     <div class="content">
         <div class="bara-sus">
