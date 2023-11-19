@@ -382,6 +382,7 @@ body{
     color: white;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    cursor: pointer;
   }
   .text {
     font-size: 1.2em;

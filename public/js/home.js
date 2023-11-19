@@ -24,6 +24,8 @@ myevents.addEventListener('click',() => {
     discovery.style.backgroundColor = 'black';
     favorite.style.backgroundColor = 'black';
     friends.style.backgroundColor = 'black';
+    content.style.display = 'none';
+    ev_load.style.display = 'flex';
     loadevents('my-events',25);
 });
 
@@ -120,18 +122,6 @@ function loadevents(location, number) {
 
   /// ... on bigger text descriere event
 
-  window.addEventListener('DOMContentLoaded', () =>{
-    var textContainer = document.querySelector('.chenar_timp_desc .desc');
-    var lineHeight = parseInt(window.getComputedStyle(textContainer).lineHeight);
-    var maxRows = 2;
-    var maxHeight = maxRows * lineHeight;
-
-    if (textContainer.offsetHeight > maxHeight) {
-        // Text occupies more than 2 rows, truncate and add three points
-        var content = textContainer.textContent.trim();
-        textContainer.innerHTML = content.substring(0, content.lastIndexOf(' ', (maxRows * 10))) + '...';
-      }
-  })
 
 function loadUI() {
     if (!localStorage.getItem("user")) {
@@ -142,6 +132,11 @@ function loadUI() {
         document.querySelector("span#welcome").innerHTML = `Welcome to UnityConnect, ${doc.data().username}!`
         document.querySelector(".options-down #WelcomeProfil").innerHTML = `Hello ${doc.data().username}!`
     })
+}
+
+function openEvent() {
+    sessionStorage.setItem("event_mode", "view")
+    location.href = '../pages/CreareEveniment.html'
 }
 
 window.onload = loadUI()
