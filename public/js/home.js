@@ -44,6 +44,7 @@ friends.addEventListener('click',() => {
     discovery.style.backgroundColor = 'black';
     favorite.style.backgroundColor = 'black';
     myevents.style.backgroundColor = 'black';
+    window.location.href = '../pages/friends.html';
 });
 
 
@@ -102,6 +103,15 @@ function loadevents(location, number) {
             break;
         case 'favorite-creators':
             title.innerHTML = "From your favorite creators";
+            break;
+        case 'upcoming':
+            title.innerHTML = "Upcoming events";
+            break;
+        case 'favorite-event':
+            title.innerHTML = "Your favorite  events";
+            break;
+        case 'my-events':
+            title.innerHTML = "Your events";
             break;
     }
   }

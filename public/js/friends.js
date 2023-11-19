@@ -13,6 +13,7 @@ discovery.addEventListener('click',() => {
     myevents.style.backgroundColor = 'black';
     friends.style.backgroundColor = 'black';
     favorite.style.backgroundColor = 'black';
+    window.location.href = "../pages/home.html"
 });
 
 myevents.addEventListener('click',() => {
@@ -20,6 +21,7 @@ myevents.addEventListener('click',() => {
     discovery.style.backgroundColor = 'black';
     favorite.style.backgroundColor = 'black';
     friends.style.backgroundColor = 'black';
+    window.location.href = "../pages/home.html";
 });
 
 friends.addEventListener('click',() => {
@@ -34,7 +36,8 @@ favorite.addEventListener('click',() => {
     discovery.style.backgroundColor = 'black';
     myevents.style.backgroundColor = 'black';
     friends.style.backgroundColor = 'black';
-});
+    window.location.href = "../pages/home.html";
+  });
 
 function test() {
   var tem = document.querySelector(".preten")
