@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/CreareEveniment.css">
+    <script defer src="../js/CreareEveniment.js"> </script>
+</head>
+<body>
+    <div id = "Titlu">
+        <h1> Nume Eveniment </h1>
+    </div>
+
+    <div class="box" id = "content">
+
+        <div id = "informatii">
+            <div id = "USER">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name:</span>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Select Date:</span>
+                        <input type="date" id="datepicker" name="date">
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Select time:</span>
+                        <input type="time" id="timepicker" name="time" >
+                    </div>
+                    
+                </div>
+
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Language:</span>
+                        <input type="text" placeholder="Select your language" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details"> Location: </span>
+                        <input type="text" placeholder="Select location" required>
+                    </div>
+
+                    <!-- <div class="input-box">
+                        <span class="details">Time:</span>
+                        <input type="text" placeholder="select hour" required>
+                    </div> -->
+
+                    <div class="input-color">
+                        <span class="details"> Event color: </span>
+                        <input type="color" default="white" id="colorPicker" name="colorPicker">
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+        <br>
+
+        <div class="box" id = "Description">
+            <span class="details">Description:</span>
+            <textarea rows="5" maxlength="800" id ="casuta-pentru-descriere" placeholder="Write a description about your event" required></textarea>
+        </div>
+
+        <br>
+
+        <div class="box" id = "participanti">
+            <strong>Participants:</strong>
+        </div>
+
+        <div class="join-now">
+            <a href="#" class="join-now-button">Join Now</a>
+        </div>
+
+    </div>
+</body>
+</html>
+
+<template>
+    <div class="account" id="openModalBtn">
+        <img src="../resources/logo_simplu.png" alt="">
+        <span id="name"> NAME</span>
+    </div>
+</template>
