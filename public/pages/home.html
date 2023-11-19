@@ -52,15 +52,20 @@
                     <span id="name"> NAME</span>
                 </div>
             <div class="modal" id="myModal">            
-                 <div id = "WelcomeProfil"> 
+                <div id = "WelcomeProfil"> 
                     Hello Name!
                 </div>
-                <div id = "profile" onclick = "location.href='./profile.html' " >
-                    Profile
+                <div id = "profil-notificare">
+                    <div id = "profile" onclick = "location.href='./profile.html' " >
+                        Profile
+                    </div>
+                    
+                    <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
                 </div>
-                <ion-icon id="bell-not" name="notifications-outline" [style.font-size]="'45px'"></ion-icon>
-                <br>
-                <button onclick="signOut()">Logout</button>
+                <div id = "pentru-buton">
+                    <button id = "logout" onclick="signOut()">Logout</button>
+                    <ion-icon name="log-out-outline" id = "logout-icon"> </ion-icon>
+                </div>
             </div>	
             
         </div>
@@ -73,21 +78,23 @@
                 var buttonX = rect.left;
                 var buttonY = rect.bottom;
 
-                var modalWidth = 150; // Adjust as needed
-                var modalHeight = 150; // Adjust as needed
+                var modalWidth = 170; // Adjust as needed
+                var modalHeight = 300; // Adjust as needed
 
-                modal.style.left = '118px';
+                modal.style.left = '120px';
                 modal.style.top = '0px';
                 modal.style.width = modalWidth + 'px';
                 modal.style.height = modalHeight + 'px';
 
                 modal.style.display = 'block';
+                openModalBtn.style.opacity = 0;
                 document.addEventListener('click', closeOnOutsideClick);
             });
 
             function closeOnOutsideClick(event) {
                 if (!modal.contains(event.target) && event.target !== openModalBtn) {
                     modal.style.display = 'none';
+                    openModalBtn.style.opacity = 1;
                 }
             }
 
@@ -149,10 +156,14 @@
       </div>
       <div class="descriere">
         <div class="d2">
-        <span class="text"> Bergen International Film</span>
-        <span class="favourites">Add to favourites</span>
-      </div>
-        <p class="text2">dhu9wbdw udq qygdqdn ndhdubw yqdvy8vwd bdqwuhd are dhqdud</p>
+            <span class="text"> Bergen International Film</span>
+        </div>
+        <div class="desc">
+            <p class="text2">dhu9wbdw udq qygdqdn ndhdubw yqdvy8vwd bdqwuhd are dhqdugsdgsdhsdhsdhdshdshsdfhsdhsdhdshdsjnfsjdfsjfsjsjsjsd</p>
+        </div>
+        <div class="add-fav">
+            <ion-icon name="star"></ion-icon>
+        </div>
       </div>
     </div>
   </template>
