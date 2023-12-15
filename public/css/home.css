@@ -4,29 +4,32 @@
 }
 body{
   user-select: none;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  overflow: hidden;
 }
 
 .options{
-    width: 13.8vw;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    padding: 20px 0 0 10px;
-    background-color: black;
-    border-right: 1px solid #333;
-    user-select: none;
+  width: 13.8vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  padding: 20px 0 0 10px;
+  background-color: black;
+  border-right: 1px solid #333;
+  user-select: none;
 }
 
 .options-up #logo span{
-    font-size: 1.5rem;
-    display: flex;
-    flex-flow: column;
+  font-size: 1.5em;
+  display: flex;
+  flex-flow: column;
+}
+.options .options-up div *, .options-down div *{
+    margin: 0 10px;
 }
 
 .options-up #logo .app-name{
@@ -37,6 +40,7 @@ body{
 .options-up #logo img{
     width: 45px;
     height: 45px;
+    margin-right: 0;
 }
 
 .options .options-up, .options .options-down{
@@ -67,9 +71,6 @@ body{
     background-color: rgb(34, 34, 34);
 }
 
-.options .options-up div *, .options-down div *{
-    margin: 0 10px;
-}
 
 .options .options-up #logo{
     margin-bottom: 70px;
