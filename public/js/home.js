@@ -112,14 +112,46 @@ upcoming.addEventListener('click', () => {
     loadevents('upcoming', 25);
 })
 
+function getDayNameFromDate(dateString) {
+    // Split the date string into year, month, and day components
+    var [year, month, day] = dateString.split('-');
+
+    // Create a Date object using the extracted components
+    var date = new Date(year, month - 1, day); // Months are zero-based
+
+    // Days of the week array
+    var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    // Get the numeric day of the week
+    var dayIndex = date.getDay();
+
+    // Map the numeric day to the corresponding day name
+    var dayName = daysOfWeek[dayIndex];
+
+    return dayName;
+}
+
+// Example usage
+var dateString = "2023-11-09";
+var dayName = getDayNameFromDate(dateString);
+console.log(dayName);
+
+
 function loadevents(location, number) {
     const ev = document.querySelector("#ev")
     const body = document.querySelector(".event-cont")
     var title = document.querySelector('.events-load #title');
-    for (let i = 0; i < number; i++) {
-      var clone = ev.content.cloneNode(true)
-      body.append(clone)
-    }
+    firebase.firestore().collection("events").get().then((querySnapshot) => {
+        body.innerHTML = ''
+        querySnapshot.forEach((doc) => {
+            var clone = ev.content.cloneNode(true)
+            clone.querySelector(".date_time .date h2").innerHTML = getDayNameFromDate(doc.data().date)
+            clone.querySelector(".date_time .time h1").innerHTML = doc.data().time
+            clone.querySelector(".text").innerHTML = doc.data().name
+            clone.querySelector(".text2").innerHTML = doc.data().description
+            body.append(clone)
+        });
+    });
 
     switch (location){
         case 'recommended':
@@ -137,7 +169,7 @@ function loadevents(location, number) {
             title.innerHTML = "Your events";
             break;
     }
-  }
+}
   
   function hoverEffon(cont) {
      // Hide the text
@@ -155,10 +187,7 @@ function loadevents(location, number) {
      // Hide the button
      cont.querySelector('.join').style.display = 'none';
   }
-
   /// ... on bigger text descriere event
-
-
 function loadUI() {
     if (!localStorage.getItem("user")) {
         location.href = "../pages/login.html"
